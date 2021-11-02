@@ -1,12 +1,50 @@
-<nz-row [nzGutter]="10">
-  <nz-col>
-    <img src="assets/cartoon_golf6raz03.JPG" width="300px" height="200px" alt="">
+<nz-row [nzGutter]="10" nzJustify="center">
+  <nz-col nzSpan="6">
+    <h2>City</h2>
   </nz-col>
-  <nz-col>
-    <h2>City: Bucharest</h2>
-    <h2>Car: Vw Golf GTD</h2>
-    <h2>Member from: 2020-04-10</h2>
-    <h2 class="cursor-pointer">More photos <i class="fas fa-images"></i></h2>
+  <nz-col nzSpan="6">
+    <h2>Car</h2>
+  </nz-col>
+  <nz-col nzSpan="6">
+    <h2>Member from</h2>
+  </nz-col>
+  <nz-col nzSpan="6">
+    <h2>Tax paid</h2>
   </nz-col>
 </nz-row>
+<nz-row [nzGutter]="10" nzJustify="center">
+  <nz-col nzSpan="6">
+    <p>Bucharest</p>
+  </nz-col>
+  <nz-col nzSpan="6">
+    <p>Vw Golf GTD</p>
+  </nz-col>
+  <nz-col nzSpan="6">
+    2020-03-10
+  </nz-col>
+  <nz-col nzSpan="6">
+    <p>Yes</p>
+  </nz-col>
+</nz-row>
+<nz-row>
+  <nz-col>
+    <h2>Car upgrades:</h2>
+    <p>Rear bumper</p>
+    <p>GTI wheels</p>
+    <p>Eibach sportline springs</p>
+    <p>GTI exhaust</p>
+  </nz-col>
+</nz-row>
+<h2 class="cursor-pointer" (click)="showImages()">More photos <i class="fas fa-images"></i></h2>
+<nz-upload
+  nzListType="picture-card"
+  [(nzFileList)]="fileList"
+  [nzShowButton]="fileList.length < 8"
+  [nzPreview]="handlePreview"
+>
+  <div>
+    <i nz-icon nzType="plus"></i>
+    <div style="margin-top: 8px">Upload</div>
+  </div>
+</nz-upload>
 

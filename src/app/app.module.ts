@@ -27,6 +27,9 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import {NzFormModule} from "ng-zorro-antd/form";
 import {NzInputModule} from "ng-zorro-antd/input";
 import {NzButtonModule} from "ng-zorro-antd/button";
+import {NzImageModule} from "ng-zorro-antd/image";
+import {NzSpaceModule} from "ng-zorro-antd/space";
+import {NzUploadModule} from "ng-zorro-antd/upload";
 
 registerLocaleData(en);
 
@@ -39,7 +42,7 @@ registerLocaleData(en);
     FooterComponent,
     MemberDetailComponent,
     AboutComponent,
-    ContactUsComponent
+    ContactUsComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,7 +60,10 @@ registerLocaleData(en);
     NzFormModule,
     NzInputModule,
     ReactiveFormsModule,
-    NzButtonModule
+    NzButtonModule,
+    NzImageModule,
+    NzSpaceModule,
+    NzUploadModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
