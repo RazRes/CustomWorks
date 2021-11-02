@@ -1,1 +1,31 @@
-<p>header works!</p>
+<nz-page-header>
+  <nz-page-header-title>CustomWorks</nz-page-header-title>
+  <nz-page-header-content>
+    <nz-row nzJustify="space-around">
+      <nz-col class="cursor-pointer">
+        <span (click)="goToHomePage()">HOME</span>
+      </nz-col>
+      <nz-col class="cursor-pointer">
+        <span (click)="goToMembersPage()">MEMBERS</span>
+      </nz-col>
+      <nz-col class="cursor-pointer">
+        <span (click)="goToAbout()">ABOUT</span>
+      </nz-col>
+      <nz-col class="cursor-pointer">
+        <span (click)="openContactModal()">CONTACT</span>
+      </nz-col>
+    </nz-row>
+  </nz-page-header-content>
+  <nz-page-header-extra>
+    <span>Hello, Razvan</span>
+    <i nzTrigger="click" nz-dropdown [nzDropdownMenu]="menu" class="fas fa-arrow-down"></i>
+
+  </nz-page-header-extra>
+</nz-page-header>
+
+<nz-dropdown-menu #menu="nzDropdownMenu">
+  <ul nz-menu nzSelectable>
+    <li nz-menu-item>Login</li>
+    <li nz-menu-item>Logout</li>
+  </ul>
+</nz-dropdown-menu>

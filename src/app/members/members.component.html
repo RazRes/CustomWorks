@@ -1,1 +1,40 @@
-<p>members works!</p>
+<nz-row nzJustify="center" [nzGutter]="25">
+  <nz-col>
+    <nz-card (click)="getMemberDetail()" nzTitle="Razvan Resmerita" nzHoverable [nzCover]="member_1">
+    </nz-card>
+  </nz-col>
+  <nz-col>
+    <nz-card nzTitle="Razvan Resmerita" nzHoverable [nzCover]="member_1">
+    </nz-card>
+  </nz-col>
+  <nz-col>
+    <nz-card nzTitle="Razvan Resmerita" nzHoverable [nzCover]="member_1">
+    </nz-card>
+  </nz-col>
+</nz-row>
+
+<nz-row class="margin-t-medium" nzJustify="center" [nzGutter]="25">
+  <nz-col>
+    <nz-card nzTitle="Razvan Resmerita" nzHoverable [nzCover]="member_1">
+    </nz-card>
+  </nz-col>
+  <nz-col>
+    <nz-card nzTitle="Razvan Resmerita" nzHoverable [nzCover]="member_1">
+    </nz-card>
+  </nz-col>
+</nz-row>
+
+<nz-row class="margin-t-medium" nzJustify="center" [nzGutter]="25">
+  <nz-col>
+    <nz-card nzTitle="Razvan Resmerita" nzHoverable [nzCover]="member_1">
+    </nz-card>
+  </nz-col>
+  <nz-col>
+    <nz-card nzTitle="Razvan Resmerita" nzHoverable [nzCover]="member_1">
+    </nz-card>
+  </nz-col>
+</nz-row>
+
+<ng-template #member_1>
+  <img width="300px" height="300px" src="assets/cartoon_golf6raz03.JPG" alt="">
+</ng-template>

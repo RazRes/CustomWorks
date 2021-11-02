@@ -1,1 +1,52 @@
-<p>home works!</p>
+<nz-row>
+  <img src="assets/cartoon_golf6raz03.JPG" alt="">
+</nz-row>
+<nz-row nzJustify="space-around" class="margin-t-medium">
+  <nz-col>
+    <nz-card nzHoverable style="width:240px" [nzCover]="firstYoutubeVideo">
+      <nz-card-meta nzTitle="Eurocar Rooftop Meet" nzDescription="www.youtube.com"></nz-card-meta>
+    </nz-card>
+  </nz-col>
+  <nz-col>
+    <nz-card nzHoverable style="width:240px" [nzCover]="secondYoutubeVideo">
+      <nz-card-meta nzTitle="Eurocar Rooftop Meet" nzDescription="www.youtube.com"></nz-card-meta>
+    </nz-card>
+  </nz-col>
+  <nz-col>
+    <nz-card nzHoverable style="width:240px" [nzCover]="thirdYoutubeVideo">
+      <nz-card-meta nzTitle="Eurocar Rooftop Meet" nzDescription="www.youtube.com"></nz-card-meta>
+    </nz-card>
+  </nz-col>
+  <nz-col>
+    <nz-card nzHoverable style="width:240px" [nzCover]="fourthYoutubeVideo">
+      <nz-card-meta nzTitle="Eurocar Rooftop Meet" nzDescription="www.youtube.com"></nz-card-meta>
+    </nz-card>
+  </nz-col>
+</nz-row>
+
+<nz-row class="margin-t-large">
+  <app-footer></app-footer>
+</nz-row>
+
+<ng-template #firstYoutubeVideo>
+  <iframe allowfullscreen height="300px"
+          src="https://www.youtube.com/embed/_YAMZ59y8yM">
+  </iframe>
+</ng-template>
+
+<ng-template #secondYoutubeVideo>
+  <iframe allowfullscreen height="300px"
+          src="https://www.youtube.com/embed/_YAMZ59y8yM">
+  </iframe>
+</ng-template>
+<ng-template #thirdYoutubeVideo>
+  <iframe allowfullscreen height="300px"
+          src="https://www.youtube.com/embed/_YAMZ59y8yM">
+  </iframe>
+</ng-template>
+<ng-template #fourthYoutubeVideo>
+  <iframe allowfullscreen height="300px"
+          src="https://www.youtube.com/embed/_YAMZ59y8yM">
+  </iframe>
+</ng-template>
+
