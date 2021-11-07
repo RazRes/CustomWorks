@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {NzModalService} from "ng-zorro-antd/modal";
 import {MemberDetailComponent} from "./member-detail/member-detail.component";
+import {MembersService} from "./members.service";
 
 @Component({
   selector: 'app-members',
@@ -10,10 +11,12 @@ import {MemberDetailComponent} from "./member-detail/member-detail.component";
 })
 export class MembersComponent implements OnInit {
 
-  constructor(private modal: NzModalService) {
+  constructor(private modal: NzModalService, private service: MembersService) {
   }
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    await this.service.getMembers()
+    // await this.login()
   }
 
   getMemberDetail() {
@@ -22,6 +25,10 @@ export class MembersComponent implements OnInit {
       nzContent: MemberDetailComponent,
       nzWidth: 700
     })
+  }
+
+  async login(){
+    await this.service.login({username: 'andrei@gmail.com', password: 'parola'})
   }
 
 
