@@ -1,0 +1,38 @@
+<nz-row class="margin-t-medium" [nzGutter]="20">
+  <nz-col nzSpan="3">
+    <div class="wrapper">
+      <ul nz-menu nzMode="inline">
+        <li
+          nz-menu-item
+          nzSelected
+          routerLink="/users"
+        >
+          <i nz-icon nzType="user" nzTheme="outline"></i>
+          <span>Members</span>
+        </li>
+        <li
+          nz-menu-item
+          nzSelected
+          routerLink="/events-management"
+        >
+          <i nz-icon nzType="appstore" nzTheme="outline"></i>
+          <span>Events</span>
+        </li>
+        <li
+          nz-menu-item
+          nzSelected
+          routerLink="/video-management"
+        >
+          <i nz-icon nzType="youtube" nzTheme="outline"></i>
+          <span>Youtube videos</span>
+        </li>
+      </ul>
+    </div>
+  </nz-col>
+  <nz-col nzSpan="20">
+      <router-outlet></router-outlet>
+  </nz-col>
+</nz-row>
+
+
+

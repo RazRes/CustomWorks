@@ -10,17 +10,23 @@
         <span (click)="goToMembersPage()">MEMBERS</span>
       </nz-col>
       <nz-col class="cursor-pointer">
-        <span (click)="goToAbout()">ABOUT</span>
+        <span (click)="goToEventsPage()">EVENTS</span>
+      </nz-col>
+      <nz-col class="cursor-pointer">
+        <span (click)="goToAboutPage()">ABOUT</span>
       </nz-col>
       <nz-col class="cursor-pointer">
         <span (click)="openContactModal()">CONTACT</span>
+      </nz-col>
+      <nz-col class="cursor-pointer">
+        <span (click)="goToAdminPage()">ADMIN</span>
       </nz-col>
     </nz-row>
 <!--    comment-->
   </nz-page-header-content>
   <nz-page-header-extra>
     <span>Hello, Razvan</span>
-    <i nzTrigger="click" nz-dropdown [nzDropdownMenu]="menu" class="fas fa-arrow-down"></i>
+    <i nzTrigger="click" nz-dropdown [nzDropdownMenu]="menu" class="fas fa-arrow-down cursor-pointer"></i>
 
   </nz-page-header-extra>
 </nz-page-header>
@@ -29,7 +35,7 @@
 
 <nz-dropdown-menu #menu="nzDropdownMenu">
   <ul nz-menu nzSelectable>
-    <li nz-menu-item>Login</li>
-    <li nz-menu-item>Logout</li>
+    <li nz-menu-item (click)="openLoginModal()">Login</li>
+    <li nz-menu-item (click)="openRegisterModal()">Logout</li>
   </ul>
 </nz-dropdown-menu>

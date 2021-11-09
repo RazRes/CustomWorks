@@ -27,8 +27,12 @@
  margin-left: 30px;
 }
 
+.text-center {
+  text-align: center;
+}
+
 app-header{
-  position: fixed;
+  position: sticky;
   width: 100%;
   background-color: aliceblue;
   z-index: 1;

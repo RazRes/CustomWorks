@@ -1,0 +1,35 @@
+<nz-row nzJustify="end">
+  <button nz-button nzType="primary" (click)="addUser()">Add user</button>
+</nz-row>
+<nz-row class="margin-t-small">
+  <nz-table #basicTable [nzData]="listOfData" style="width: 100%">
+    <thead>
+    <tr>
+      <th nzAlign="center">Name</th>
+      <th nzAlign="center">Car</th>
+      <th nzAlign="center">City</th>
+      <th nzAlign="center">Member from</th>
+      <th nzAlign="center">Tax Paid</th>
+      <th nzAlign="center">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let data of basicTable.data; let i=index" style="text-align: center">
+      <td>{{ data.name }}</td>
+      <td>{{ data.car }}</td>
+      <td>{{ data.city }}</td>
+      <td>{{ data.memberFrom }}</td>
+      <td>{{ data.taxPaid | boolean}}</td>
+      <td>
+        <nz-space>
+          <button style="min-width: 75px" *nzSpaceItem nz-button nzType="primary" [nzDanger]="true"
+                  nz-popconfirm nzPopconfirmTitle="Are you sure you want to delete this user?"
+                  (nzOnConfirm)="deleteUser(i)">Delete
+          </button>
+          <button style="min-width: 75px" nz-button *nzSpaceItem nzType="primary" (click)="editUser(data)">Edit</button>
+        </nz-space>
+      </td>
+    </tr>
+    </tbody>
+  </nz-table>
+</nz-row>
