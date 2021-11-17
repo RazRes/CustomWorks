@@ -18,6 +18,8 @@ import {RouterModule, Routes} from "@angular/router";
 import {EventsManagementComponent} from "./events-management/events-management.component";
 import {VideoManagementComponent} from './video-management/video-management.component';
 import {AdminComponent} from "./admin.component";
+import {NzSpinModule} from "ng-zorro-antd/spin";
+import {NzCardModule} from "ng-zorro-antd/card";
 
 const routes: Routes = [
   {
@@ -42,20 +44,22 @@ const routes: Routes = [
   exports: [
     UsersComponent
   ],
-  imports: [
-    RouterModule.forRoot(routes),
-    CommonModule,
-    NzButtonModule,
-    NzSpaceModule,
-    NzPopconfirmModule,
-    NzTableModule,
-    NzGridModule,
-    NzFormModule,
-    ReactiveFormsModule,
-    NzInputModule,
-    NzDatePickerModule,
-    NzCheckboxModule
-  ]
+    imports: [
+        RouterModule.forRoot(routes),
+        CommonModule,
+        NzButtonModule,
+        NzSpaceModule,
+        NzPopconfirmModule,
+        NzTableModule,
+        NzGridModule,
+        NzFormModule,
+        ReactiveFormsModule,
+        NzInputModule,
+        NzDatePickerModule,
+        NzCheckboxModule,
+        NzSpinModule,
+        NzCardModule
+    ]
 })
 export class AdminModule {
 }

@@ -3,6 +3,8 @@ import {UserInterface} from './model';
 import {NzModalService} from "ng-zorro-antd/modal";
 import {AddUserComponent} from "./add-user/add-user.component";
 import {EditUserComponent} from "./edit-user/edit-user.component";
+import {UsersService} from "./users.service";
+import {async} from "rxjs";
 
 @Component({
   selector: 'app-users',
@@ -11,47 +13,26 @@ import {EditUserComponent} from "./edit-user/edit-user.component";
 })
 export class UsersComponent implements OnInit {
 
-  listOfData: UserInterface [] = [
-    {
-      car: 'Vw GTD MK6',
-      name: 'RazRes',
-      city: 'Bucharest',
-      memberFrom: '2020-06-10',
-      taxPaid: true
-    },
-    {
-      car: 'Vw GTD MK6',
-      name: 'RazRes',
-      city: 'Bucharest',
-      memberFrom: '2020-06-10',
-      taxPaid: true
-    },
-    {
-      car: 'Vw GTD MK6',
-      name: 'RazRes',
-      city: 'Bucharest',
-      memberFrom: '2020-06-10',
-      taxPaid: true
-    },
-    {
-      car: 'Vw GTD MK6',
-      name: 'RazRes',
-      city: 'Bucharest',
-      memberFrom: '2020-06-10',
-      taxPaid: false
-    }
-  ]
+  listOfData!: UserInterface []
+  loading = false
 
-  constructor(private modal: NzModalService) {
+  constructor(private modal: NzModalService, private userService: UsersService) {
   }
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    this.loading = true
+    this.listOfData = await this.userService.getUsers()
+    this.loading = false
+    console.log(this.listOfData)
   }
 
   addUser() {
     this.modal.create({
       nzTitle: 'Add user',
-      nzContent: AddUserComponent
+      nzContent: AddUserComponent,
+      nzOnOk: async (component) => {
+        component.save(component.validateForm)
+      }
     })
   }
 
@@ -65,8 +46,8 @@ export class UsersComponent implements OnInit {
     })
   }
 
-  deleteUser(index: number){
-    this.listOfData.splice(index,1)
-    this.listOfData = [...this.listOfData]
-  }
+  // deleteUser(index: number) {
+  //   this.listOfData.splice(index, 1)
+  //   this.listOfData = [...this.listOfData]
+  // }
 }

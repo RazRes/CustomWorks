@@ -1,32 +1,38 @@
 <form nz-form [formGroup]="validateForm">
   <nz-form-item>
-    <nz-form-label nzSpan="6" nzRequired nzFor="name">Name</nz-form-label>
+    <nz-form-label nzSpan="6" nzRequired nzFor="name">Username</nz-form-label>
     <nz-form-control>
-      <input style="width: 80%" nz-input formControlName="name"/>
+      <input style="width: 80%" nz-input formControlName="username"/>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
-    <nz-form-label nzSpan="6" nzRequired nzFor="car">Car</nz-form-label>
+    <nz-form-label nzSpan="6" nzRequired nzFor="car">Email</nz-form-label>
     <nz-form-control>
-      <input style="width: 80%"  nz-input formControlName="car"/>
+      <input style="width: 80%" nz-input formControlName="email"/>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
-    <nz-form-label nzSpan="6" nzRequired nzFor="city">City</nz-form-label>
+    <nz-form-label nzSpan="6" nzRequired nzFor="city">Password</nz-form-label>
     <nz-form-control>
-      <input style="width: 80%"  nz-input formControlName="city"/>
+      <input style="width: 80%" nz-input formControlName="password"/>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
-    <nz-form-label nzSpan="6" nzRequired nzFor="memberFrom">Member from</nz-form-label>
+    <nz-form-label nzSpan="6" nzRequired nzFor="memberFrom">First Name</nz-form-label>
     <nz-form-control>
-      <nz-date-picker style="width: 80%" formControlName="memberFrom"></nz-date-picker>
+      <input style="width: 80%" formControlName="firstName"/>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item nz-row>
-    <nz-form-label nzSpan="6" nzRequired nzFor="taxPaid">Tax paid</nz-form-label>
+    <nz-form-label nzSpan="6" nzRequired nzFor="taxPaid">Last Name</nz-form-label>
     <nz-form-control>
-      <label nz-checkbox formControlName="taxPaid"></label>
+      <input style="width: 80%" formControlName="lastName"/>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item nz-row>
+    <nz-form-label nzSpan="6" nzRequired nzFor="taxPaid">Enabled</nz-form-label>
+    <nz-form-control>
+      <label nz-checkbox formControlName="enabled"></label>
     </nz-form-control>
   </nz-form-item>
 </form>

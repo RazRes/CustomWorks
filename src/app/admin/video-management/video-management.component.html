@@ -1,1 +1,58 @@
-<p>video-management works!</p>
+<!--<nz-spin [nzSpinning]="loading">-->
+<!--  <nz-row nzJustify="end">-->
+<!--    <button nz-button nzType="primary" >Add user</button>-->
+<!--  </nz-row>-->
+<!--  <nz-row class="margin-t-small">-->
+<!--    <nz-table #basicTable [nzData]="videoList"  style="width: 100%">-->
+<!--      <thead>-->
+<!--      <tr>-->
+<!--        <th nzAlign="center">Link</th>-->
+<!--        <th nzAlign="center">Lastname</th>-->
+<!--        <th nzAlign="center">Username</th>-->
+<!--        <th nzAlign="center">Email</th>-->
+<!--        <th nzAlign="center">Active</th>-->
+<!--        <th nzAlign="center">Actions</th>-->
+<!--      </tr>-->
+<!--      </thead>-->
+<!--      <tbody>-->
+<!--      <tr *ngFor="let data of basicTable.data; let i=index" style="text-align: center">-->
+<!--&lt;!&ndash;        <td>{{ data.firstName }}</td>&ndash;&gt;-->
+<!--&lt;!&ndash;        <td>{{ data.lastName }}</td>&ndash;&gt;-->
+<!--&lt;!&ndash;        <td>{{ data.username }}</td>&ndash;&gt;-->
+<!--&lt;!&ndash;        <td>{{ data.email }}</td>&ndash;&gt;-->
+<!--&lt;!&ndash;        <td>{{ data.enabled | boolean}}</td>&ndash;&gt;-->
+<!--        <td>-->
+<!--          <nz-space>-->
+<!--            <button style="min-width: 75px" *nzSpaceItem nz-button nzType="primary" [nzDanger]="true"-->
+<!--                    nz-popconfirm nzPopconfirmTitle="Are you sure you want to delete this user?"-->
+<!--            >Delete-->
+<!--            </button>-->
+<!--            <button style="min-width: 75px" nz-button *nzSpaceItem nzType="primary" >Edit-->
+<!--            </button>-->
+<!--          </nz-space>-->
+<!--        </td>-->
+<!--      </tr>-->
+<!--      </tbody>-->
+<!--    </nz-table>-->
+<!--  </nz-row>-->
+<!--</nz-spin>-->
+<nz-row nzJustify="space-around" class="margin-t-medium">
+  <nz-col *ngFor="let video of videoList">
+    <nz-card nzHoverable style="width:240px" [nzCover]="firstYoutubeVideo">
+      <nz-card-meta [nzTitle]="video.title" [nzDescription]="cardDescription"></nz-card-meta>
+    </nz-card>
+    <ng-template #firstYoutubeVideo>
+      <iframe allowfullscreen height="300px"
+              [src]="video.link">
+      </iframe>
+    </ng-template>
+  </nz-col>
+</nz-row>
+
+<ng-template #cardDescription>
+  <p>www.youtube.com</p>
+  <i class="fas fa-trash-alt"></i>
+</ng-template>
+
+
+
