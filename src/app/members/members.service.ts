@@ -6,8 +6,7 @@ import {HttpClient} from "@angular/common/http";
 })
 export class MembersService {
 
-  apiUrl = 'http://localhost:8085/users'
-  apiLogin  = 'http://localhost:8085/login'
+  apiUrl = 'http://localhost:8085/members'
 
   constructor(private http: HttpClient) { }
 
@@ -16,6 +15,6 @@ export class MembersService {
   }
 
   login(param: { username: string; password: string; }){
-    return this.http.post(this.apiLogin, {param}).toPromise()
+    return this.http.post(this.apiUrl, {param}).toPromise()
   }
 }

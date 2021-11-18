@@ -43,7 +43,7 @@
     </nz-card>
     <ng-template #firstYoutubeVideo>
       <iframe allowfullscreen height="300px"
-              [src]="video.link">
+              [src]="video.link | safeUrl">
       </iframe>
     </ng-template>
   </nz-col>

@@ -20,6 +20,7 @@ import {VideoManagementComponent} from './video-management/video-management.comp
 import {AdminComponent} from "./admin.component";
 import {NzSpinModule} from "ng-zorro-antd/spin";
 import {NzCardModule} from "ng-zorro-antd/card";
+import { SafeUrlPipe } from './safe-url.pipe';
 
 const routes: Routes = [
   {
@@ -39,27 +40,28 @@ const routes: Routes = [
     EditUserComponent,
     BooleanPipe,
     EventsManagementComponent,
-    VideoManagementComponent
+    VideoManagementComponent,
+    SafeUrlPipe,
   ],
   exports: [
     UsersComponent
   ],
-    imports: [
-        RouterModule.forRoot(routes),
-        CommonModule,
-        NzButtonModule,
-        NzSpaceModule,
-        NzPopconfirmModule,
-        NzTableModule,
-        NzGridModule,
-        NzFormModule,
-        ReactiveFormsModule,
-        NzInputModule,
-        NzDatePickerModule,
-        NzCheckboxModule,
-        NzSpinModule,
-        NzCardModule
-    ]
+  imports: [
+    RouterModule.forRoot(routes),
+    CommonModule,
+    NzButtonModule,
+    NzSpaceModule,
+    NzPopconfirmModule,
+    NzTableModule,
+    NzGridModule,
+    NzFormModule,
+    ReactiveFormsModule,
+    NzInputModule,
+    NzDatePickerModule,
+    NzCheckboxModule,
+    NzSpinModule,
+    NzCardModule,
+  ]
 })
 export class AdminModule {
 }

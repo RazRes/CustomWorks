@@ -20,4 +20,8 @@ export class UsersService {
   save(user: FormGroup) {
     return this.http.post(`${this.apiUrl}/save`, user).toPromise()
   }
+
+  delete(id: number) {
+    return this.http.delete(`${this.apiUrl}/delete`, {body: id}).toPromise()
+  }
 }

@@ -32,7 +32,8 @@ export class UsersComponent implements OnInit {
       nzContent: AddUserComponent,
       nzOnOk: async (component) => {
         component.save(component.validateForm)
-      }
+        await this.userService.getUsers()
+      },
     })
   }
 
@@ -46,8 +47,9 @@ export class UsersComponent implements OnInit {
     })
   }
 
-  // deleteUser(index: number) {
-  //   this.listOfData.splice(index, 1)
-  //   this.listOfData = [...this.listOfData]
-  // }
+  async deleteUser(id: number) {
+    // this.listOfData.splice(index, 1)
+    // this.listOfData = [...this.listOfData]
+    await this.userService.delete(id)
+  }
 }
