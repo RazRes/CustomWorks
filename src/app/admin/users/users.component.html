@@ -6,7 +6,6 @@
     <nz-table #basicTable [nzData]="listOfData" style="width: 100%">
       <thead>
       <tr>
-        <th nzAlign="center" >Id</th>
         <th nzAlign="center">Firstname</th>
         <th nzAlign="center">Lastname</th>
         <th nzAlign="center">Username</th>
@@ -17,7 +16,6 @@
       </thead>
       <tbody>
       <tr *ngFor="let data of basicTable.data; let i=index" style="text-align: center">
-        <td>{{data.id}}</td>
         <td>{{ data.firstName }}</td>
         <td>{{ data.lastName }}</td>
         <td>{{ data.username }}</td>

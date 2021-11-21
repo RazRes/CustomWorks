@@ -29,8 +29,11 @@ export class UsersComponent implements OnInit {
       nzTitle: 'Add user',
       nzContent: AddUserComponent,
       nzOnOk: async (component) => {
-        component.save(component.validateForm)
-        await this.userService.getUsers()
+        component.save(component.validateForm).then(async () => {
+          this.loading = true
+          this.listOfData = await this.userService.getUsers()
+          this.loading = false
+        })
       },
     })
   }

@@ -1,39 +1,9 @@
-
 <nz-row nzJustify="center" [nzGutter]="25" class="margin-t-medium">
-  <nz-col>
-    <nz-card (click)="getMemberDetail()" nzTitle="Razvan Resmerita" nzHoverable [nzCover]="member_1">
+  <nz-col *ngFor="let member of members">
+    <nz-card (click)="getMemberDetail()" [nzTitle]="member.memberName.toUpperCase()" nzHoverable [nzCover]="member_1">
     </nz-card>
   </nz-col>
-  <nz-col>
-    <nz-card nzTitle="Razvan Resmerita" nzHoverable [nzCover]="member_1">
-    </nz-card>
-  </nz-col>
-  <nz-col>
-    <nz-card nzTitle="Razvan Resmerita" nzHoverable [nzCover]="member_1">
-    </nz-card>
-  </nz-col>
-</nz-row>
 
-<nz-row class="margin-t-medium" nzJustify="center" [nzGutter]="25">
-  <nz-col>
-    <nz-card nzTitle="Razvan Resmerita" nzHoverable [nzCover]="member_1">
-    </nz-card>
-  </nz-col>
-  <nz-col>
-    <nz-card nzTitle="Razvan Resmerita" nzHoverable [nzCover]="member_1">
-    </nz-card>
-  </nz-col>
-</nz-row>
-
-<nz-row class="margin-t-medium" nzJustify="center" [nzGutter]="25">
-  <nz-col>
-    <nz-card nzTitle="Razvan Resmerita" nzHoverable [nzCover]="member_1">
-    </nz-card>
-  </nz-col>
-  <nz-col>
-    <nz-card nzTitle="Razvan Resmerita" nzHoverable [nzCover]="member_1">
-    </nz-card>
-  </nz-col>
 </nz-row>
 
 <ng-template #member_1>
