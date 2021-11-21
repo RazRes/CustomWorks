@@ -1,5 +1,4 @@
-import {Component, OnInit, TemplateRef} from '@angular/core';
-import {Router} from "@angular/router";
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-admin',
@@ -8,23 +7,11 @@ import {Router} from "@angular/router";
 })
 export class AdminComponent implements OnInit {
 
-  showMembers = true
-  showEvents = false
-  showVideos = false
-
-  constructor(private router: Router) {
+  constructor() {
   }
 
   ngOnInit(): void {
   }
 
-  showMembersMenu() {
-  }
-
-  showEventsMenu() {
-  }
-
-  showVideosMenu() {
-  }
 
 }

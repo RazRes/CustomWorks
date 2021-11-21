@@ -21,6 +21,9 @@ import {AdminComponent} from "./admin.component";
 import {NzSpinModule} from "ng-zorro-antd/spin";
 import {NzCardModule} from "ng-zorro-antd/card";
 import { SafeUrlPipe } from './safe-url.pipe';
+import { AddVideoComponent } from './video-management/add-video/add-video.component';
+import { AddEventComponent } from './events-management/add-event/add-event.component';
+import { EditEventComponent } from './events-management/edit-event/edit-event.component';
 
 const routes: Routes = [
   {
@@ -42,6 +45,9 @@ const routes: Routes = [
     EventsManagementComponent,
     VideoManagementComponent,
     SafeUrlPipe,
+    AddVideoComponent,
+    AddEventComponent,
+    EditEventComponent,
   ],
   exports: [
     UsersComponent

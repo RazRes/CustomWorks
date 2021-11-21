@@ -1,5 +1,3 @@
-import {Validators} from "@angular/forms";
-
 export interface UserInterface {
   email: string
   enabled: boolean
@@ -10,6 +8,7 @@ export interface UserInterface {
   roles: string []
   username: string
 }
+
 export interface AddUser {
   username: string,
   email: string,

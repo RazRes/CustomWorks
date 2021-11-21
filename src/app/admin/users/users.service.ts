@@ -24,4 +24,8 @@ export class UsersService {
   delete(id: number) {
     return this.http.delete(`${this.apiUrl}/delete`, {body: id}).toPromise()
   }
+
+  getId(id: number) {
+    return this.http.get(`${this.apiUrl}/detail/${id}`).toPromise()
+  }
 }

@@ -4,7 +4,6 @@ import {NzModalService} from "ng-zorro-antd/modal";
 import {AddUserComponent} from "./add-user/add-user.component";
 import {EditUserComponent} from "./edit-user/edit-user.component";
 import {UsersService} from "./users.service";
-import {async} from "rxjs";
 
 @Component({
   selector: 'app-users',
@@ -37,7 +36,8 @@ export class UsersComponent implements OnInit {
     })
   }
 
-  editUser(user: UserInterface) {
+  async editUser(user: UserInterface) {
+    await this.userService.getId(user.id)
     this.modal.create({
       nzTitle: 'Edit user',
       nzContent: EditUserComponent,

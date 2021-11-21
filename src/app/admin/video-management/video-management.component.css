@@ -1,0 +1,14 @@
+.add-video-container {
+  width: 240px;
+  height: 430px;
+  align-items: center;
+  text-align: center;
+  color: #262626;
+}
+
+.add-video-icon:hover {
+  cursor: pointer;
+  color: red;
+  /*text-shadow: 0 0 10px #fc0000*/
+}
+
