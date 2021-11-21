@@ -12,7 +12,7 @@ export class MembersService {
   constructor(private http: HttpClient) { }
 
   getMembers(){
-    return this.http.get<Member>(this.apiUrl).toPromise()
+    return this.http.get<Member []>(this.apiUrl).toPromise()
   }
 
   login(param: { username: string; password: string; }){

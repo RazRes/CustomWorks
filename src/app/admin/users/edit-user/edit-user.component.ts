@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
+import {Form, FormControl, FormGroup, Validators} from "@angular/forms";
 import {UserInterface} from "../model";
+import {UsersService} from "../users.service";
 
 @Component({
   selector: 'app-edit-user',
@@ -11,18 +12,33 @@ export class EditUserComponent implements OnInit {
 
   @Input() user!: UserInterface
   validateForm: FormGroup = new FormGroup({
-    name: new FormControl(),
-    city: new FormControl(),
-    car: new FormControl(),
-    memberFrom: new FormControl(),
-    taxPaid: new FormControl()
+    id: new FormControl(),
+    firstName: new FormControl(),
+    lastName: new FormControl(),
+    email: new FormControl(),
+    username: new FormControl(),
+    enabled: new FormControl(),
+    password: new FormControl()
   });
 
-  constructor() {
+  constructor(private userService: UsersService) {
   }
 
   ngOnInit(): void {
-    this.validateForm.patchValue(this.user)
+    console.log(this.user)
+    this.validateForm.patchValue({
+      id: this.user.id,
+      firstName: this.user.firstName,
+      lastName: this.user.lastName,
+      email: this.user.email,
+      username: this.user.username,
+      enabled: this.user.enabled,
+      password: this.user.password
+    })
+  }
+
+  async save(user: FormGroup) {
+    await this.userService.save(user.value)
   }
 
 }

@@ -22,7 +22,6 @@ export class UsersComponent implements OnInit {
     this.loading = true
     this.listOfData = await this.userService.getUsers()
     this.loading = false
-    console.log(this.listOfData)
   }
 
   addUser() {
@@ -37,12 +36,18 @@ export class UsersComponent implements OnInit {
   }
 
   async editUser(user: UserInterface) {
-    await this.userService.getId(user.id)
     this.modal.create({
       nzTitle: 'Edit user',
       nzContent: EditUserComponent,
       nzComponentParams: {
         user
+      },
+      nzOnOk: async (component) => {
+        component.save(component.validateForm).then(async () => {
+          this.loading = true
+          this.listOfData = await this.userService.getUsers()
+          this.loading = false
+        })
       }
     })
   }

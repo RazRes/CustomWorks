@@ -28,4 +28,5 @@ export class UsersService {
   getId(id: number) {
     return this.http.get(`${this.apiUrl}/detail/${id}`).toPromise()
   }
+
 }

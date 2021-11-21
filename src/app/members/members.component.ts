@@ -18,7 +18,7 @@ export class MembersComponent implements OnInit {
   }
 
   async ngOnInit() {
-    await this.service.getMembers()
+    this.members = await this.service.getMembers()
     // await this.login()
   }
 
@@ -30,7 +30,7 @@ export class MembersComponent implements OnInit {
     })
   }
 
-  async login(){
+  async login() {
     await this.service.login({username: 'andrei@gmail.com', password: 'parola'})
   }
 
