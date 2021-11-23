@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Event} from "../model";
 import {NzModalRef} from "ng-zorro-antd/modal";
+import {EventsService} from "../events.service";
 
 @Component({
   selector: 'app-edit-event',
@@ -13,17 +14,28 @@ export class EditEventComponent implements OnInit {
   @Input() event!: Event
 
   form: FormGroup = new FormGroup({
+    id: new FormControl(),
     name: new FormControl(),
     location: new FormControl(),
-    date: new FormControl
+    eventDate: new FormControl(),
+    eventLink: new FormControl(),
+    picture: new FormControl(),
+    content: new FormControl()
   })
 
-  constructor(private modalRef: NzModalRef) {
+  constructor(private modalRef: NzModalRef, private eventService: EventsService) {
   }
 
   ngOnInit(): void {
-    this.form.patchValue(this.event)
-    console.log(this.event, 'Event')
+    this.form.patchValue({
+      id: this.event.id,
+      name: this.event.name,
+      location: this.event.location,
+      eventDate: this.event.eventDate,
+      eventLink: this.event.eventLink,
+      picture: this.event.picture,
+      content: this.event.content
+    })
   }
 
 
@@ -31,7 +43,8 @@ export class EditEventComponent implements OnInit {
     this.modalRef.close()
   }
 
-  saveEvent() {
+  async saveEvent(form: FormGroup) {
+    await this.eventService.save(form)
     this.modalRef.close()
   }
 

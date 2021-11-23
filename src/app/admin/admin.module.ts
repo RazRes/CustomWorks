@@ -24,6 +24,7 @@ import { SafeUrlPipe } from './safe-url.pipe';
 import { AddVideoComponent } from './video-management/add-video/add-video.component';
 import { AddEventComponent } from './events-management/add-event/add-event.component';
 import { EditEventComponent } from './events-management/edit-event/edit-event.component';
+import { MembersManagementComponent } from './members-management/members-management.component';
 
 const routes: Routes = [
   {
@@ -31,7 +32,8 @@ const routes: Routes = [
     children: [
       {path: 'users', component: UsersComponent},
       {path: 'events-management', component: EventsManagementComponent},
-      {path: 'video-management', component: VideoManagementComponent}
+      {path: 'video-management', component: VideoManagementComponent},
+      {path: 'members-management', component: MembersManagementComponent}
     ]
   },
 ]
@@ -48,6 +50,7 @@ const routes: Routes = [
     AddVideoComponent,
     AddEventComponent,
     EditEventComponent,
+    MembersManagementComponent,
   ],
   exports: [
     UsersComponent

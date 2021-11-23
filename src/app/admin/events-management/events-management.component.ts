@@ -45,9 +45,10 @@ export class EventsManagementComponent implements OnInit {
     console.log(event)
   }
 
-  deleteEvent(index: number) {
-    this.events.splice(index, 1)
-    this.events = [...this.events]
+  async deleteEvent(id: number) {
+    // this.events.splice(index, 1)
+    // this.events = [...this.events]
+    await this.eventService.delete(id)
   }
 
 }

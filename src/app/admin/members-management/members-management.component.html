@@ -1,0 +1,45 @@
+<nz-spin [nzSpinning]="loading">
+  <nz-row nzJustify="end">
+    <button nz-button nzType="primary">Add member</button>
+  </nz-row>
+  <nz-row class="margin-t-small">
+    <nz-table #basicTable [nzData]="members" style="width: 100%">
+      <thead>
+      <tr>
+        <th nzAlign="center">Name</th>
+        <th nzAlign="center">Email</th>
+        <th nzAlign="center">Id Social media</th>
+        <th nzAlign="center">Enter date</th>
+        <th nzAlign="center">Exit date</th>
+        <th nzAlign="center">Car Id</th>
+        <th nzAlign="center">Tax paid</th>
+        <th nzAlign="center">Tax end date</th>
+        <th nzAlign="center">Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let data of basicTable.data; let i=index" style="text-align: center">
+        <td>{{ data.memberName }}</td>
+        <td>{{ data.email }}</td>
+        <td>{{ data.idSocialMedia }}</td>
+        <td>{{ data.enterDate }}</td>
+        <td>{{ data.exitDate }}</td>
+        <td>{{ data.memberCarId }}</td>
+        <td>{{ data.taxPaid | boolean}}</td>
+        <td>{{ data.taxEndDate }}</td>
+        <td>
+          <nz-space>
+            <button style="min-width: 75px" *nzSpaceItem nz-button nzType="primary" [nzDanger]="true"
+                    nz-popconfirm nzPopconfirmTitle="Are you sure you want to delete this user?"
+            >Delete
+            </button>
+            <button style="min-width: 75px" nz-button *nzSpaceItem nzType="primary">Edit
+            </button>
+          </nz-space>
+        </td>
+      </tr>
+      </tbody>
+    </nz-table>
+  </nz-row>
+</nz-spin>
+

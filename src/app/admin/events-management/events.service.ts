@@ -10,6 +10,7 @@ export class EventsService {
 
   apiUrl = 'http://localhost:8085/events'
   apiUrlSave = 'http://localhost:8085/events/save'
+  apiUrlDelete = 'http://localhost:8085/events/delete'
 
   constructor(private http: HttpClient) {
   }
@@ -20,5 +21,9 @@ export class EventsService {
 
   save(params: FormGroup) {
     return this.http.post(this.apiUrlSave, params).toPromise()
+  }
+
+  delete(id: number) {
+    return this.http.delete(this.apiUrlDelete, {body: id}).toPromise()
   }
 }

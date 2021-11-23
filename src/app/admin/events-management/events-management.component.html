@@ -25,7 +25,7 @@
           <nz-space>
             <button style="min-width: 75px" *nzSpaceItem nz-button nzType="primary" [nzDanger]="true"
                     nz-popconfirm nzPopconfirmTitle="Are you sure you want to delete this user?"
-                    (nzOnConfirm)="deleteEvent(i)"
+                    (nzOnConfirm)="deleteEvent(data.id)"
             >Delete
             </button>
             <button style="min-width: 75px" nz-button *nzSpaceItem nzType="primary" (click)="editEvent(data)">Edit
