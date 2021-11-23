@@ -1,5 +1,11 @@
 export interface Event {
-  name: string,
-  location: string,
-  date: string
+  id: number
+  name: string
+  location: string
+  content: string
+  eventDate: string
+  eventLink: string
+  picture: string
+
+
 }

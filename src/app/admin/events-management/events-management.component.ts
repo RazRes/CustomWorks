@@ -5,6 +5,7 @@ import {AddEventComponent} from "./add-event/add-event.component";
 import {UserInterface} from "../users/model";
 import {EditUserComponent} from "../users/edit-user/edit-user.component";
 import {EditEventComponent} from "./edit-event/edit-event.component";
+import {EventsService} from "./events.service";
 
 @Component({
   selector: 'app-events-management',
@@ -13,28 +14,15 @@ import {EditEventComponent} from "./edit-event/edit-event.component";
 })
 export class EventsManagementComponent implements OnInit {
 
-  events: Event [] = [
-    {
-      date: '2022-01-02',
-      name: 'Euro meeting',
-      location: 'Bucharest'
-    },
-    {
-      date: '2022-01-02',
-      name: 'Euro meeting',
-      location: 'Bucharest'
-    },
-    {
-      date: '2022-01-02',
-      name: 'Euro meeting',
-      location: 'Bucharest'
-    }
-  ]
+  events: Event [] = []
+  loading = false
 
-  constructor(private modal: NzModalService) {
+  constructor(private modal: NzModalService, private eventService: EventsService) {
   }
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    this.loading = true
+    this.events = await this.eventService.list().finally(() => this.loading = false)
   }
 
   addEvent() {

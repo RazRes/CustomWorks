@@ -1,35 +1,41 @@
-<nz-row nzJustify="end">
-  <button nz-button nzType="primary" (click)="addEvent()">Add event</button>
-</nz-row>
-<nz-row class="margin-t-small">
-  <nz-table #basicTable [nzData]="events" style="width: 100%">
-    <thead>
-    <tr>
-      <th nzAlign="center">Name</th>
-      <th nzAlign="center">Location</th>
-      <th nzAlign="center">Date</th>
+<nz-spin [nzSpinning]="loading">
+  <nz-row nzJustify="end">
+    <button nz-button nzType="primary" (click)="addEvent()">Add event</button>
+  </nz-row>
+  <nz-row class="margin-t-small">
+    <nz-table #basicTable [nzData]="events" style="width: 100%">
+      <thead>
+      <tr>
+        <th nzAlign="center">Name</th>
+        <th nzAlign="center">Location</th>
+        <th nzAlign="center">Content</th>
+        <th nzAlign="center">Date</th>
+        <th nzAlign="center">Event link</th>
+        <th nzAlign="center">Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let data of basicTable.data; let i=index" style="text-align: center">
+        <td>{{ data.name }}</td>
+        <td>{{ data.location }}</td>
+        <td>{{ data.content }}</td>
+        <td>{{ data.eventDate }}</td>
+        <td>{{ data.eventLink }}</td>
+        <td>
+          <nz-space>
+            <button style="min-width: 75px" *nzSpaceItem nz-button nzType="primary" [nzDanger]="true"
+                    nz-popconfirm nzPopconfirmTitle="Are you sure you want to delete this user?"
+                    (nzOnConfirm)="deleteEvent(i)"
+            >Delete
+            </button>
+            <button style="min-width: 75px" nz-button *nzSpaceItem nzType="primary" (click)="editEvent(data)">Edit
+            </button>
+          </nz-space>
+        </td>
+      </tr>
+      </tbody>
+    </nz-table>
 
-      <th nzAlign="center">Action</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let data of basicTable.data; let i=index" style="text-align: center">
-      <td>{{ data.name }}</td>
-      <td>{{ data.location }}</td>
-      <td>{{ data.date }}</td>
-      <td>
-        <nz-space>
-          <button style="min-width: 75px" *nzSpaceItem nz-button nzType="primary" [nzDanger]="true"
-                  nz-popconfirm nzPopconfirmTitle="Are you sure you want to delete this user?"
-                  (nzOnConfirm)="deleteEvent(i)"
-          >Delete
-          </button>
-          <button style="min-width: 75px" nz-button *nzSpaceItem nzType="primary" (click)="editEvent(data)">Edit
-          </button>
-        </nz-space>
-      </td>
-    </tr>
-    </tbody>
-  </nz-table>
-</nz-row>
+  </nz-row>
+</nz-spin>
 
