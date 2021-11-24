@@ -44,8 +44,7 @@ export class EditEventComponent implements OnInit {
   }
 
   async saveEvent(form: FormGroup) {
-    await this.eventService.save(form)
-    this.modalRef.close()
+    await this.eventService.save(form.value)
   }
 
 }

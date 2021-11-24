@@ -12,13 +12,56 @@ import {Member} from "./model";
 })
 export class MembersComponent implements OnInit {
 
-  members: Member [] = []
+  members: Member [] = [
+    {
+      email: '',
+      enterDate: '',
+      exitDate: '',
+      id: 0,
+      idSocialMedia: 0,
+      lastName: '',
+      memberCarId: 0,
+      memberName: '',
+      taxEndDate: '',
+      taxPaid: false,
+      taxStartDate: ''
+    },
+    {
+      email: '',
+      enterDate: '',
+      exitDate: '',
+      id: 0,
+      idSocialMedia: 0,
+      lastName: '',
+      memberCarId: 0,
+      memberName: '',
+      taxEndDate: '',
+      taxPaid: false,
+      taxStartDate: ''
+    },
+    {
+      email: '',
+      enterDate: '',
+      exitDate: '',
+      id: 0,
+      idSocialMedia: 0,
+      lastName: '',
+      memberCarId: 0,
+      memberName: '',
+      taxEndDate: '',
+      taxPaid: false,
+      taxStartDate: ''
+    }
+  ]
+
+  loading = false
 
   constructor(private modal: NzModalService, private service: MembersService) {
   }
 
   async ngOnInit() {
-    this.members = await this.service.getMembers()
+    this.loading = true
+    this.members = await this.service.getMembers().finally(() => this.loading = false)
     // await this.login()
   }
 

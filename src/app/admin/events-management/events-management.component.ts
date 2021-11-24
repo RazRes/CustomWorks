@@ -2,8 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {Event} from "./model";
 import {NzModalService} from "ng-zorro-antd/modal";
 import {AddEventComponent} from "./add-event/add-event.component";
-import {UserInterface} from "../users/model";
-import {EditUserComponent} from "../users/edit-user/edit-user.component";
 import {EditEventComponent} from "./edit-event/edit-event.component";
 import {EventsService} from "./events.service";
 
@@ -40,15 +38,21 @@ export class EventsManagementComponent implements OnInit {
       nzComponentParams: {
         event
       },
-      nzFooter: null
+      nzOnOk: ((component) => {
+        this.loading = true
+        component.saveEvent(component.form).finally(async () => {
+          this.events = await this.eventService.list().finally(() => this.loading = false)
+        })
+      })
     })
     console.log(event)
   }
 
-  async deleteEvent(id: number) {
-    // this.events.splice(index, 1)
-    // this.events = [...this.events]
-    await this.eventService.delete(id)
+  async deleteEvent(id: number | undefined) {
+    this.loading = true
+    await this.eventService.delete(id).finally(async () => {
+      this.events = await this.eventService.list().finally(() => this.loading = false)
+    })
   }
 
 }

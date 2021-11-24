@@ -11,11 +11,13 @@ export class MembersManagementComponent implements OnInit {
 
   members: Member [] = []
   loading = false
+
   constructor(private membersService: MembersService) {
   }
 
   async ngOnInit() {
-   this.members = await this.membersService.getMembers()
+    this.loading = true
+    this.members = await this.membersService.getMembers().finally(() => this.loading = false)
   }
 
 }

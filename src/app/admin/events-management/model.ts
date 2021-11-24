@@ -1,5 +1,5 @@
 export interface Event {
-  id: number
+  id: number | undefined
   name: string
   location: string
   content: string

@@ -1,0 +1,18 @@
+.header-container {
+  background-color: #262626;
+  height: 100px;
+
+}
+.col-container{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+ h1{
+   color: white;
+ }
+
+ h1:hover{
+   text-shadow: 2px 2px 8px #95ecdd;
+ }
+

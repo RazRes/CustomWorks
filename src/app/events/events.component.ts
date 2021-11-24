@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Event} from "../admin/events-management/model";
+import {EventsService} from "../admin/events-management/events.service";
 
 @Component({
   selector: 'app-events',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventsComponent implements OnInit {
 
-  constructor() { }
+  events: Event[] = [
+    {
+      id: undefined,
+      name: '',
+      location: '',
+      content: '',
+      eventDate: '',
+      eventLink: '',
+      picture: ''
+    }
+  ]
+  loading = false
 
-  ngOnInit(): void {
+  constructor(private eventService: EventsService) {
+  }
+
+  async ngOnInit() {
+    this.loading = true
+    this.events = await this.eventService.list().finally(() => this.loading = false)
   }
 
 }

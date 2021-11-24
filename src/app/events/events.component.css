@@ -1,1 +1,11 @@
+.youtube-link{
+  background-color: aquamarine;
+  text-align: center;
+  vertical-align: center;
+  cursor: pointer;
+}
 
+.youtube-link:hover{
+  background-color: #4267B2;
+  color: white;
+}

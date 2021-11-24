@@ -56,8 +56,10 @@ export class UsersComponent implements OnInit {
   }
 
   async deleteUser(id: number) {
-    // this.listOfData.splice(index, 1)
-    // this.listOfData = [...this.listOfData]
-    await this.userService.delete(id)
+    this.loading = true
+    await this.userService.delete(id).finally(async () => {
+      this.listOfData = await this.userService.getUsers()
+      this.loading = false
+    })
   }
 }

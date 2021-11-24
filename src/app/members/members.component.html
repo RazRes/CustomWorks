@@ -1,10 +1,11 @@
-<nz-row nzJustify="center" [nzGutter]="25" class="margin-t-medium">
-  <nz-col *ngFor="let member of members">
-    <nz-card (click)="getMemberDetail()" [nzTitle]="member.memberName.toUpperCase()" nzHoverable [nzCover]="member_1">
-    </nz-card>
-  </nz-col>
-
-</nz-row>
+<nz-spin [nzSpinning]="loading">
+  <nz-row nzJustify="space-around" [nzGutter]="25" class="margin-t-medium">
+    <nz-col nzSpan="7" *ngFor="let member of members" class="margin-t-medium">
+      <nz-card style="background-color: rgb(255,255,255)" (click)="getMemberDetail()" [nzTitle]="member.memberName.toUpperCase()" nzHoverable [nzCover]="member_1">
+      </nz-card>
+    </nz-col>
+  </nz-row>
+</nz-spin>
 
 <ng-template #member_1>
   <img width="300px" height="300px" src="assets/cartoon_golf6raz03.JPG" alt="">

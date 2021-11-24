@@ -23,7 +23,7 @@ export class EventsService {
     return this.http.post(this.apiUrlSave, params).toPromise()
   }
 
-  delete(id: number) {
+  delete(id: number | undefined) {
     return this.http.delete(this.apiUrlDelete, {body: id}).toPromise()
   }
 }

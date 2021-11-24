@@ -1,36 +1,61 @@
+<nz-row nzJustify="space-around" class="header-container" [nzGutter]="20">
+  <!--  <nz-col nzSpan="4">-->
+  <!--    <nz-card style="width: auto; height: 400px" [nzCover]="customworksLogo">-->
+  <!--    </nz-card>-->
+  <!--  </nz-col>-->
+  <nz-col class="col-container">
+    <h1 (click)="goToHomePage()">Home</h1>
+  </nz-col>
+  <nz-col class="col-container">
+    <h1 (click)="goToMembersPage()">Members</h1>
+  </nz-col>
+  <nz-col class="col-container">
+    <h1 (click)="goToEventsPage()">Events</h1>
+  </nz-col>
+  <nz-col class="col-container">
+    <h1 (click)="goToAboutPage()">About</h1>
+  </nz-col>
+  <nz-col class="col-container">
+    <h1 (click)="openContactModal()">Contact</h1>
+  </nz-col>
+  <nz-col class="col-container">
+    <h1 (click)="goToAdminPage()">Admin</h1>
+  </nz-col>
+</nz-row>
+<ng-template #customworksLogo>
+  <img src="assets/customworksLogo.png" alt="" nz-image>
+</ng-template>
+<!--<nz-page-header>-->
+<!--  <nz-page-header-title>CustomWorks</nz-page-header-title>-->
+<!--  <nz-page-header-content>-->
+<!--    <nz-row nzJustify="space-around">-->
+<!--      <nz-col class="cursor-pointer">-->
+<!--        <span (click)="goToHomePage()">HOME</span>-->
+<!--      </nz-col>-->
+<!--      <nz-col class="cursor-pointer">-->
+<!--        <span (click)="goToMembersPage()">MEMBERS</span>-->
+<!--      </nz-col>-->
+<!--      <nz-col class="cursor-pointer">-->
+<!--        <span (click)="goToEventsPage()">EVENTS</span>-->
+<!--      </nz-col>-->
+<!--      <nz-col class="cursor-pointer">-->
+<!--        <span (click)="goToAboutPage()">ABOUT</span>-->
+<!--      </nz-col>-->
+<!--      <nz-col class="cursor-pointer">-->
+<!--        <span (click)="openContactModal()">CONTACT</span>-->
+<!--      </nz-col>-->
+<!--      <nz-col class="cursor-pointer">-->
+<!--        <span (click)="goToAdminPage()">ADMIN</span>-->
+<!--      </nz-col>-->
+<!--    </nz-row>-->
+<!--&lt;!&ndash;    comment&ndash;&gt;-->
+<!--  </nz-page-header-content>-->
+<!--  <nz-page-header-extra>-->
+<!--    <span>Hello, Razvan</span>-->
+<!--    <i nzTrigger="click" nz-dropdown [nzDropdownMenu]="menu" class="fas fa-arrow-down cursor-pointer"></i>-->
 
-<nz-page-header>
-  <nz-page-header-title>CustomWorks</nz-page-header-title>
-  <nz-page-header-content>
-    <nz-row nzJustify="space-around">
-      <nz-col class="cursor-pointer">
-        <span (click)="goToHomePage()">HOME</span>
-      </nz-col>
-      <nz-col class="cursor-pointer">
-        <span (click)="goToMembersPage()">MEMBERS</span>
-      </nz-col>
-      <nz-col class="cursor-pointer">
-        <span (click)="goToEventsPage()">EVENTS</span>
-      </nz-col>
-      <nz-col class="cursor-pointer">
-        <span (click)="goToAboutPage()">ABOUT</span>
-      </nz-col>
-      <nz-col class="cursor-pointer">
-        <span (click)="openContactModal()">CONTACT</span>
-      </nz-col>
-      <nz-col class="cursor-pointer">
-        <span (click)="goToAdminPage()">ADMIN</span>
-      </nz-col>
-    </nz-row>
-<!--    comment-->
-  </nz-page-header-content>
-  <nz-page-header-extra>
-    <span>Hello, Razvan</span>
-    <i nzTrigger="click" nz-dropdown [nzDropdownMenu]="menu" class="fas fa-arrow-down cursor-pointer"></i>
-
-  </nz-page-header-extra>
-</nz-page-header>
-
+<!--  </nz-page-header-extra>-->
+<!--</nz-page-header>-->
 
 
 <nz-dropdown-menu #menu="nzDropdownMenu">
