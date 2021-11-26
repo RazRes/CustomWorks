@@ -1,16 +1,27 @@
 <nz-row nzJustify="space-around" [nzGutter]="20" class="footer-container">
   <nz-col nzSpan="8" class="text-center">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid consequatur cumque eum, facilis iste
-    molestiae nam nobis non numquam optio pariatur perferendis quidem repellendus repudiandae sed tempora velit
-    voluptate.
+    This page was created by Razvan Resmerita and Razvan Bocancea.
+    <br>
+    If you want to see more about their work experience please check their GitHub profiles
+    <br>
+    <a (click)="navigateToResmerita()">Razvan Resmerita</a>
+    <br>
+    <a (click)="navigateToBocancea()">Razvan Bocancea</a>
   </nz-col>
   <nz-col nzSpan="8" class="text-center">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet autem enim magnam nemo, obcaecati unde veritatis?
-    Corporis, cupiditate fugit id iste laboriosam nulla perspiciatis quos sequi sit suscipit vel veritatis.
+    We would like to thanks to our sponsors.
+    <br>
+    Sponsor nr 1
+    <br>
+    Sponsor nr 2
+    <br>
+    Sponsor nr 3
+    <br>
+    Sponsor nr 4
   </nz-col>
   <nz-col nzSpan="8" class="text-center">
-    <i class="fab fa-instagram-square fa-3x"></i>
-    <i class="fab fa-facebook-square fa-3x margin-l-medium"></i>
-    <i class="fab fa-youtube-square fa-3x margin-l-medium"></i>
+    <i class="fab fa-instagram-square fa-3x" (click)="navigateToInstagram()"></i>
+    <i class="fab fa-facebook-square fa-3x margin-l-medium" (click)="navigateToFacebook()"></i>
+    <i class="fab fa-youtube-square fa-3x margin-l-medium" (click)="navigateToYoutube()"></i>
   </nz-col>
 </nz-row>

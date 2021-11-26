@@ -1,0 +1,38 @@
+<form nz-form [formGroup]="validateForm">
+  <nz-form-item>
+    <nz-form-label nzSpan="6" nzRequired>Username</nz-form-label>
+    <nz-form-control>
+      <input style="width: 80%" nz-input formControlName="memberName"/>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label nzSpan="6" nzRequired>Last name</nz-form-label>
+    <nz-form-control>
+      <input style="width: 80%" type="password" nz-input formControlName="lastName"/>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label nzSpan="6" nzRequired>Email</nz-form-label>
+    <nz-form-control>
+      <input style="width: 80%" type="email" nz-input formControlName="email"/>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label nzSpan="6" nzRequired>Tax paid</nz-form-label>
+    <nz-form-control>
+      <label nz-checkbox formControlName="taxPaid"></label>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item nz-row>
+    <nz-form-label nzSpan="6" nzRequired>Tax start date</nz-form-label>
+    <nz-form-control>
+      <nz-date-picker formControlName="taxStartDate"></nz-date-picker>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item nz-row>
+    <nz-form-label nzSpan="6" nzRequired>Tax end date</nz-form-label>
+    <nz-form-control>
+      <nz-date-picker formControlName="taxStartDate"></nz-date-picker>
+    </nz-form-control>
+  </nz-form-item>
+</form>

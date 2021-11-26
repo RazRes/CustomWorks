@@ -25,6 +25,8 @@ import {AddVideoComponent} from './video-management/add-video/add-video.componen
 import {AddEventComponent} from './events-management/add-event/add-event.component';
 import {EditEventComponent} from './events-management/edit-event/edit-event.component';
 import {MembersManagementComponent} from './members-management/members-management.component';
+import { AddMemberComponent } from './members-management/add-member/add-member.component';
+import { EditMemberComponent } from './members-management/edit-member/edit-member.component';
 
 const routes: Routes = [
   {
@@ -55,6 +57,8 @@ const routes: Routes = [
     AddEventComponent,
     EditEventComponent,
     MembersManagementComponent,
+    AddMemberComponent,
+    EditMemberComponent,
   ],
   exports: [
     UsersComponent
