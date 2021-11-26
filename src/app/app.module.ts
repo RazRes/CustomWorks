@@ -43,7 +43,6 @@ import {NzCalendarModule} from "ng-zorro-antd/calendar";
 import {NzDatePickerModule} from "ng-zorro-antd/date-picker";
 import {NzPopconfirmModule} from "ng-zorro-antd/popconfirm";
 import {NzModalModule} from "ng-zorro-antd/modal";
-import {AdminModule} from "./admin/admin.module";
 import {NzSkeletonModule} from "ng-zorro-antd/skeleton";
 
 registerLocaleData(en);
@@ -92,7 +91,6 @@ registerLocaleData(en);
         NzDatePickerModule,
         NzPopconfirmModule,
         NzModalModule,
-        AdminModule,
         NzSkeletonModule
     ],
     providers: [{provide: NZ_I18N, useValue: en_US}],

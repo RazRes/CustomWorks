@@ -42,10 +42,8 @@ export class VideoManagementComponent implements OnInit {
   }
 
 
-  deleteVideo(index:number) {
-    this.iconList.push( this.videoList.splice(index, 1)[0] )
-    console.log(this.iconList.length)
-    console.log(this.videoList.length)
+  deleteVideo(index: number) {
+    this.iconList.push(this.videoList.splice(index, 1)[0])
   }
 
   adVideo() {

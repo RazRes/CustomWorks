@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {NzModalService} from "ng-zorro-antd/modal";
 import {MemberDetailComponent} from "./member-detail/member-detail.component";
 import {MembersService} from "./members.service";
-import {Member} from "./model";
+import {Member, members} from "./model";
 
 @Component({
   selector: 'app-members',
@@ -12,47 +12,7 @@ import {Member} from "./model";
 })
 export class MembersComponent implements OnInit {
 
-  members: Member [] = [
-    {
-      email: '',
-      enterDate: '',
-      exitDate: '',
-      id: 0,
-      idSocialMedia: 0,
-      lastName: '',
-      memberCarId: 0,
-      memberName: '',
-      taxEndDate: '',
-      taxPaid: false,
-      taxStartDate: ''
-    },
-    {
-      email: '',
-      enterDate: '',
-      exitDate: '',
-      id: 0,
-      idSocialMedia: 0,
-      lastName: '',
-      memberCarId: 0,
-      memberName: '',
-      taxEndDate: '',
-      taxPaid: false,
-      taxStartDate: ''
-    },
-    {
-      email: '',
-      enterDate: '',
-      exitDate: '',
-      id: 0,
-      idSocialMedia: 0,
-      lastName: '',
-      memberCarId: 0,
-      memberName: '',
-      taxEndDate: '',
-      taxPaid: false,
-      taxStartDate: ''
-    }
-  ]
+  members: Member [] = members
 
   loading = false
 
@@ -62,7 +22,6 @@ export class MembersComponent implements OnInit {
   async ngOnInit() {
     this.loading = true
     this.members = await this.service.getMembers().finally(() => this.loading = false)
-    // await this.login()
   }
 
   getMemberDetail() {
@@ -73,9 +32,6 @@ export class MembersComponent implements OnInit {
     })
   }
 
-  async login() {
-    await this.service.login({username: 'andrei@gmail.com', password: 'parola'})
-  }
 
 
 }

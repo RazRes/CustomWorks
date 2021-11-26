@@ -11,3 +11,45 @@ export interface Member {
   taxPaid: boolean
   taxStartDate: string
 }
+
+export const members = [
+  {
+    email: '',
+      enterDate: '',
+    exitDate: '',
+    id: 0,
+    idSocialMedia: 0,
+    lastName: '',
+    memberCarId: 0,
+    memberName: '',
+    taxEndDate: '',
+    taxPaid: false,
+    taxStartDate: ''
+  },
+  {
+    email: '',
+      enterDate: '',
+    exitDate: '',
+    id: 0,
+    idSocialMedia: 0,
+    lastName: '',
+    memberCarId: 0,
+    memberName: '',
+    taxEndDate: '',
+    taxPaid: false,
+    taxStartDate: ''
+  },
+  {
+    email: '',
+      enterDate: '',
+    exitDate: '',
+    id: 0,
+    idSocialMedia: 0,
+    lastName: '',
+    memberCarId: 0,
+    memberName: '',
+    taxEndDate: '',
+    taxPaid: false,
+    taxStartDate: ''
+  }
+]

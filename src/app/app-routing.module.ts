@@ -4,7 +4,7 @@ import {HomeComponent} from "./home/home.component";
 import {MembersComponent} from "./members/members.component";
 import {AboutComponent} from "./about/about.component";
 import {EventsComponent} from "./events/events.component";
-import {AdminComponent} from "./admin/admin.component";
+import {AdminModule} from "./admin/admin.module";
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -12,8 +12,9 @@ const routes: Routes = [
   {path: 'members', component: MembersComponent},
   {path: 'about', component: AboutComponent},
   {path: 'events', component: EventsComponent},
-  {path: 'admin', component: AdminComponent},
+  {path: 'admin', loadChildren: () => AdminModule},
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

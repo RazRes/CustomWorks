@@ -46,11 +46,11 @@ export class UsersComponent implements OnInit {
         user
       },
       nzOnOk: async (component) => {
-        component.save(component.validateForm).then(async () => {
-          this.loading = true
-          this.listOfData = await this.userService.getUsers()
+        this.loading = true
+        component.save(component.validateForm).finally(async () => {
           this.loading = false
         })
+        this.listOfData = await this.userService.getUsers()
       }
     })
   }
@@ -58,8 +58,8 @@ export class UsersComponent implements OnInit {
   async deleteUser(id: number) {
     this.loading = true
     await this.userService.delete(id).finally(async () => {
-      this.listOfData = await this.userService.getUsers()
       this.loading = false
     })
+    this.listOfData = await this.userService.getUsers()
   }
 }

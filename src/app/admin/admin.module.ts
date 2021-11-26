@@ -20,22 +20,26 @@ import {VideoManagementComponent} from './video-management/video-management.comp
 import {AdminComponent} from "./admin.component";
 import {NzSpinModule} from "ng-zorro-antd/spin";
 import {NzCardModule} from "ng-zorro-antd/card";
-import { SafeUrlPipe } from './safe-url.pipe';
-import { AddVideoComponent } from './video-management/add-video/add-video.component';
-import { AddEventComponent } from './events-management/add-event/add-event.component';
-import { EditEventComponent } from './events-management/edit-event/edit-event.component';
-import { MembersManagementComponent } from './members-management/members-management.component';
+import {SafeUrlPipe} from './safe-url.pipe';
+import {AddVideoComponent} from './video-management/add-video/add-video.component';
+import {AddEventComponent} from './events-management/add-event/add-event.component';
+import {EditEventComponent} from './events-management/edit-event/edit-event.component';
+import {MembersManagementComponent} from './members-management/members-management.component';
 
 const routes: Routes = [
   {
     path: '', component: AdminComponent,
     children: [
+      {
+        path: '', redirectTo: 'users', pathMatch: 'full',
+      },
       {path: 'users', component: UsersComponent},
       {path: 'events-management', component: EventsManagementComponent},
       {path: 'video-management', component: VideoManagementComponent},
       {path: 'members-management', component: MembersManagementComponent}
     ]
   },
+
 ]
 
 @NgModule({
@@ -56,7 +60,7 @@ const routes: Routes = [
     UsersComponent
   ],
   imports: [
-    RouterModule.forRoot(routes),
+    RouterModule.forChild(routes),
     CommonModule,
     NzButtonModule,
     NzSpaceModule,

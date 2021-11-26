@@ -2,28 +2,27 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Event} from "./model";
 import {FormGroup} from "@angular/forms";
+import {environment} from "../../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class EventsService {
 
-  apiUrl = 'http://localhost:8085/events'
-  apiUrlSave = 'http://localhost:8085/events/save'
-  apiUrlDelete = 'http://localhost:8085/events/delete'
+
 
   constructor(private http: HttpClient) {
   }
 
   list() {
-    return this.http.get<Event []>(this.apiUrl).toPromise()
+    return this.http.get<Event []>(`${environment.apiUrl}/events`).toPromise()
   }
 
   save(params: FormGroup) {
-    return this.http.post(this.apiUrlSave, params).toPromise()
+    return this.http.post(`${environment.apiUrl}/events/save`, params).toPromise()
   }
 
   delete(id: number | undefined) {
-    return this.http.delete(this.apiUrlDelete, {body: id}).toPromise()
+    return this.http.delete(`${environment.apiUrl}/events/delete`, {body: id}).toPromise()
   }
 }
